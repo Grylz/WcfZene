@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WcfZene;
 using Zeneszamok.Models;
 
 namespace Zeneszamok.Controllers
@@ -71,8 +72,6 @@ namespace Zeneszamok.Controllers
         public List<Eloado> EloadokListaja()
         {
             List<Eloado> eloadoLista = new List<Eloado>();
-            try
-            { 
             BludConnection();
             sqlCon.Open();
             string sql = "SELECT * FROM eloado";
@@ -94,16 +93,8 @@ namespace Zeneszamok.Controllers
             }
             sqlCon.Close();
             return eloadoLista;
-            }
-            catch (Exception ex)
-            {
-                Eloado hiba = new Eloado()
-                {
-
-                }
-            }
-        }
-
+            }     
     }
     
 }
+
